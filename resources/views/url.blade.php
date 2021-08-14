@@ -19,8 +19,8 @@
 @if (! empty($tag->image))
     <image:image>
             <image:loc>{{ $tag->image['loc'] }}</image:loc>
-            <image:caption>{!! html_entity_encode($tag->image['caption']) !!}</image:caption>
-            <image:title>{!! html_entity_encode($tag->image['title']) !!}</image:title>
+            <image:caption>{!! htmlspecialchars($tag->image['caption']) !!}</image:caption>
+            <image:title>{!! htmlspecialchars($tag->image['title']) !!}</image:title>
         </image:image>
     @endif
 </url>
