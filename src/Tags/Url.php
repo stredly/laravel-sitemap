@@ -30,6 +30,9 @@ class Url extends Tag
     /** @var array */
     public $alternates = [];
 
+    /** @var array */
+    public $image = [];
+
     public static function create(string $url): self
     {
         return new static($url);
@@ -88,6 +91,18 @@ class Url extends Tag
     public function setPriority(float $priority)
     {
         $this->priority = max(0, min(1, $priority));
+
+        return $this;
+    }
+
+    /**
+     * @param array $image
+     *
+     * @return $this
+     */
+    public function setImage(array $image)
+    {
+        $this->image = $image;
 
         return $this;
     }
